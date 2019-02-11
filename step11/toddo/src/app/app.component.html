@@ -3,5 +3,21 @@
 <ul>
   <li *ngFor="let pass of passengers; let i = index">
     {{i+1}}: {{pass.fullName}}
+    <span class="status"
+    [class.check-in]="pass.checkIn"
+    ></span>
   </li>
 </ul>
+
+
+<ul>
+    <li *ngFor="let pass of passengers; let i = index">
+      {{i+1}}: {{pass.fullName}}
+      <span class="status"
+      [ngClass]="{
+        'check-in': pass.checkIn,
+        'check-out': !pass.checkIn
+      }"
+      ></span>
+    </li>
+  </ul>
