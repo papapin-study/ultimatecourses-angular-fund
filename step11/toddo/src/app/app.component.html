@@ -1,14 +1,7 @@
+<h1>Airlines</h1>
 
-<input 
-  type="text"
-  #username
-  
->
-
-<button
-  (click)="handleClick(username.value)"
->Get value</button>
-
-
-
-{{name}}
+<ul>
+  <li *ngFor="let pass of passengers; let i = index">
+    {{i+1}}: {{pass.fullName}}
+  </li>
+</ul>

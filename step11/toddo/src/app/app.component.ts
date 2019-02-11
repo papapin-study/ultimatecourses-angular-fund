@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+
+interface Passenger {
+  id: number,
+  fullName: string,
+  checkIn: boolean
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,11 +14,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  name = 'toddo';
-
-  handleClick(value: string) {
-    this.name = value;
-  }
-
+  passengers: Passenger[] = [
+    {
+      id: 1,
+      fullName: 'Andrew',
+      checkIn: false
+    },
+    {
+      id: 2,
+      fullName: 'Todd',
+      checkIn: true
+    },
+    {
+      id: 3,
+      fullName: 'Diana',
+      checkIn: false
+    }
+  ]
  
 }
